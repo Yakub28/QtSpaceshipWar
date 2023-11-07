@@ -2,7 +2,7 @@
 #include "MyRect.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
-
+#include <QTimer>
 
 
 int main(int argc, char *argv[])
@@ -28,11 +28,15 @@ int main(int argc, char *argv[])
 
 
     view->show();
-    view->setFixedSize(600,400);
-    scene->setSceneRect(0,0,600,400);
+    view->setFixedSize(800,550);
+    scene->setSceneRect(0,0,800,600);
 
     player->setPos(view->width()/2,view->height()-player->rect().height());
 
+
+    QTimer *timer=new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
+    timer->start(2000);
 
     return a.exec();
 }
