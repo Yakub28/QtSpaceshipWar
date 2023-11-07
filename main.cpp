@@ -11,15 +11,15 @@ int main(int argc, char *argv[])
 
     QGraphicsScene *scene= new QGraphicsScene();
 
-    MyRect *rect=new MyRect();
-    rect->setRect(0,0,100,100);
+    MyRect *player=new MyRect();
+    player->setRect(0,0,100,100);
 
     //add item to the scene
-    scene->addItem(rect);
+    scene->addItem(player);
 
     //make an item focusable
-    rect->setFlag(QGraphicsItem::ItemIsFocusable);
-    rect->setFocus();
+    player->setFlag(QGraphicsItem::ItemIsFocusable);
+    player->setFocus();
 
     //add a view
     QGraphicsView *view=new QGraphicsView(scene);
@@ -28,6 +28,11 @@ int main(int argc, char *argv[])
 
 
     view->show();
+    view->setFixedSize(600,400);
+    scene->setSceneRect(0,0,600,400);
+
+    player->setPos(view->width()/2,view->height()-player->rect().height());
+
 
     return a.exec();
 }
