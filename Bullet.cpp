@@ -3,6 +3,9 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
+#include "Game.h"
+
+extern Game *game;
 
 Bullet::Bullet()
 {
@@ -21,6 +24,9 @@ void Bullet::move()
     QList<QGraphicsItem *> colliding_items=collidingItems();
     for(auto i:colliding_items){
         if(typeid(*(i))==typeid(Enemy)){
+            //increase the score
+            game->score->increase();
+
             //remove both and delete
             scene()->removeItem(i);
             scene()->removeItem(this);
