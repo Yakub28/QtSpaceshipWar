@@ -10,14 +10,25 @@ CONFIG += c++17
 
 SOURCES += \
     Bullet.cpp \
-    MyRect.cpp \
+    Enemy.cpp \
+    Game.cpp \
+    Health.cpp \
+    Player.cpp \
+    Score.cpp \
     main.cpp
 
 HEADERS += \
     Bullet.h \
-    MyRect.h
+    Enemy.h \
+    Game.h \
+    Health.h \
+    Player.h \
+    Score.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc
