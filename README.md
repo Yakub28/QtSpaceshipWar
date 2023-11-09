@@ -19,6 +19,7 @@ SpaceshipWar is an exciting 2D game where players control a spaceship to engage 
    ```bash
    git clone https://github.com/yourusername/spaceshipwar.git
    cd spaceshipwar
+
 ## Build with Qt Creator:
 
 1. Open the project in Qt Creator.
