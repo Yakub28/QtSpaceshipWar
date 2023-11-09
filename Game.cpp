@@ -2,7 +2,10 @@
 #include <QTimer>
 #include <QGraphicsTextItem>
 #include <QFont>
+#include <QFile>
+#include <QAudioOutput>
 #include "Enemy.h"
+#include <QMediaPlayer>
 
 Game::Game(QWidget *parent){
     // create the scene
@@ -37,6 +40,14 @@ Game::Game(QWidget *parent){
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
     timer->start(2000);
+
+    //play background music
+    QMediaPlayer* music=new QMediaPlayer();
+    auto audio=new QAudioOutput;
+    music->setAudioOutput(audio);
+    music->setSource(QUrl::fromLocalFile("C:/Users/User/Downloads/space-120280 - Copy.mp3"));
+    audio->setVolume(50);
+    music->play();
 
     show();
 }

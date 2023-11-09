@@ -1,9 +1,18 @@
 #include "Player.h"
+#include <QGraphicsScene>
 #include <QKeyEvent>
 #include "Bullet.h"
-#include <QGraphicsScene>
 #include "Enemy.h"
+#include <QAudioOutput>
 
+Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
+
+    bulletsound = new QMediaPlayer();
+    auto audioOutput=new QAudioOutput;
+    bulletsound->setAudioOutput(audioOutput);
+    bulletsound->setSource(QUrl::fromLocalFile("C:/Users/User/Downloads/shotgun-firing-4-6746 - Copy.mp3"));
+    audioOutput->setVolume(50);
+}
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key()==Qt::Key_Left){
@@ -24,6 +33,12 @@ void Player::keyPressEvent(QKeyEvent *event)
         Bullet *bullet=new Bullet();
         bullet->setPos(x(),y());
         scene()->addItem(bullet);
+
+        //play bulletsound
+        if(bulletsound->playbackState() == QMediaPlayer::PlayingState)
+            bulletsound->setPosition(0);
+        else if(bulletsound->playbackState() == QMediaPlayer::StoppedState)
+            bulletsound->play();
     }
 }
 
@@ -33,3 +48,5 @@ void Player::spawn()
     Enemy *enemy=new Enemy();
     scene()->addItem(enemy);
 }
+
+
