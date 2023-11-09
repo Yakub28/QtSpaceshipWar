@@ -19,3 +19,31 @@ SpaceshipWar is an exciting 2D game where players control a spaceship to engage 
    ```bash
    git clone https://github.com/yourusername/spaceshipwar.git
    cd spaceshipwar
+## Build with Qt Creator:
+
+1. Open the project in Qt Creator.
+2. Configure the build settings.
+3. Build the project.
+
+## Run the Game:
+
+- Launch the built executable.
+- Start playing!
+
+## Controls
+
+- **Arrow Keys:** Move the spaceship.
+- **Spacebar:** Fire bullets.
+
+## Contributing
+
+Contributions are welcome! If you want to contribute to SpaceshipWar, please fork the repository and create a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Thanks to the Qt team for providing an excellent framework for C++ development.
+- Inspired by classic 2D space shooter games.
