@@ -5,13 +5,13 @@
 #include "Game.h"
 extern Game* game;
 
-Enemy::Enemy()
-{
+
+Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     int random_number=rand()%700;
     //set random position
     setPos(random_number,0);
 
-    setRect(0,0,100,100);
+    setPixmap(QPixmap(":/images/images/download__1_-removebg-preview (2).png"));
 
     //connect
     QTimer*timer=new QTimer();
@@ -24,7 +24,7 @@ void Enemy::move()
 {
     // move enemy down
     setPos(x(),y()+5);
-    if(pos().y()+rect().height()>550)
+    if(pos().y()>500)
     {
         //decrease health
         game->health->decrease();

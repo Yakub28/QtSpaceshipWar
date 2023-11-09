@@ -5,13 +5,15 @@
 #include "Enemy.h"
 #include <QAudioOutput>
 
-Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
+Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
 
     bulletsound = new QMediaPlayer();
     auto audioOutput=new QAudioOutput;
     bulletsound->setAudioOutput(audioOutput);
     bulletsound->setSource(QUrl::fromLocalFile("C:/Users/User/Downloads/shotgun-firing-4-6746 - Copy.mp3"));
     audioOutput->setVolume(50);
+
+    setPixmap(QPixmap(":/images/images/download-removebg-preview (1).png"));
 }
 void Player::keyPressEvent(QKeyEvent *event)
 {

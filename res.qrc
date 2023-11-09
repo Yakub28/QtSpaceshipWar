@@ -3,4 +3,10 @@
         <file>C:/Users/User/Downloads/shotgun-firing-4-6746 - Copy.mp3</file>
         <file>C:/Users/User/Downloads/space-120280 - Copy.mp3</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>images/blast-removebg-preview (1).png</file>
+        <file>images/download__1_-removebg-preview (2).png</file>
+        <file>images/download-removebg-preview (1).png</file>
+        <file>images/star_galaxy_glow_95414_800x600.jpg</file>
+    </qresource>
 </RCC>
