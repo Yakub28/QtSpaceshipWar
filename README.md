@@ -15,7 +15,7 @@ SpaceshipWar is an exciting 2D game where players control a spaceship to engage 
 
 ## How to Build
 
-## **Clone the Repository:**
+**Clone the Repository:**
    ```bash
    git clone https://github.com/yourusername/spaceshipwar.git
    cd spaceshipwar
