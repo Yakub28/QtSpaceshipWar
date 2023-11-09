@@ -1,2 +1,6 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/sounds">
+        <file>C:/Users/User/Downloads/shotgun-firing-4-6746 - Copy.mp3</file>
+        <file>C:/Users/User/Downloads/space-120280 - Copy.mp3</file>
+    </qresource>
+</RCC>
